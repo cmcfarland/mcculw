@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Jupyter Server",
+            "type": "shell",
+            "command": "if (Test-Path '${workspaceFolder}/dev/Scripts/jupyter.exe') { & '${workspaceFolder}/dev/Scripts/jupyter.exe' notebook --no-browser --notebook-dir='${workspaceFolder}' } else { Write-Host 'Jupyter not found — run Python: Create Environment first' }",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                }
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated",
+                "showReuseMessage": false
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}
